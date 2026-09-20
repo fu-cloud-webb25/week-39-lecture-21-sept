@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+  /* Backgrounds */
+  --color-bg: #0b0b10;
+  --color-bg-header: #111118;
+  --color-surface: #171720;
+  --color-surface-hover: #1d1d27;
+  --color-input: #13131b;
+
+  /* Borders */
+  --color-border: #292936;
+  --color-border-light: #333342;
+
+  /* Text */
+  --color-text: #e7e7ed;
+  --color-text-muted: #8b8b9d;
+  --color-text-subtle: #606074;
+
+  /* Brand / accent */
+  --color-primary: #fbbf24;
+  --color-primary-hover: #f59e0b;
+  --color-primary-muted: #3b3014;
+
+  /* Status */
+  --color-success: #34d399;
+  --color-success-bg: #12382f;
+
+  --color-danger: #f87171;
+  --color-danger-bg: #3b181d;
+
+  /* Misc */
+  --color-overlay: rgba(0, 0, 0, 0.75);
+
+  /* Typography */
+  --font-primary: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Layout */
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+a,
+input, 
+button {
+  font-family: var(--font-mono);
+}
+
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}

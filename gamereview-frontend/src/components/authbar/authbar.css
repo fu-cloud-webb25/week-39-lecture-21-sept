@@ -1,0 +1,9 @@
+.auth-bar {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+
+    .auth-bar__user {
+        color: var(--color-text-muted);
+    }
+}

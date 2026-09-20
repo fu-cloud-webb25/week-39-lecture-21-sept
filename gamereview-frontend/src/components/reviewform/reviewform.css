@@ -1,0 +1,104 @@
+.review-form {
+    padding: 1.5rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
+
+.review-form__title {
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+    font-size: 1.1rem;
+}
+
+.review-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.review-form__label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+.review-form__rating {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.review-form__rating button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.review-form__textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-input);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text);
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+.review-form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.review-form__textarea::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.review-form__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.review-form__cancel,
+.review-form__submit {
+    padding: 0.65rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.review-form__cancel {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
+
+.review-form__cancel:hover {
+    border-color: var(--color-border-light);
+    color: var(--color-text);
+}
+
+.review-form__submit {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-bg);
+}
+
+.review-form__submit:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}

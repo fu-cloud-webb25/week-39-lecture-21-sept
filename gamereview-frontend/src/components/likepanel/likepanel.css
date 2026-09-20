@@ -1,0 +1,67 @@
+.like-panel {
+    padding: 1rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
+
+.like-panel__button {
+    width: 100%;
+    min-height: 95px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Endast inloggade användare får interaktiv styling */
+.like-panel__button--interactive {
+    cursor: pointer;
+}
+
+.like-panel__button--interactive:hover {
+    border-color: var(--color-primary);
+}
+
+/* Spelet är likeat av den inloggade användaren */
+.like-panel__button--liked .like-panel__icon {
+    color: var(--color-primary);
+}
+
+/* Spelet är likeat av den inloggade användaren */
+.like-panel__button--liked {
+    border-color: var(--color-primary);
+}
+
+/* Hover på ett redan likeat spel */
+.like-panel__button--liked:hover {
+    border-color: var(--color-text);
+}
+
+.like-panel__icon {
+    font-size: 1.1rem;
+}
+
+.like-panel__count {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+}
+
+.like-panel__label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+.like-panel__error {
+    color: var(--color-danger);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
