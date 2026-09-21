@@ -5,27 +5,26 @@ import { jwtDecode } from "jwt-decode";
 export const useAuthStore = create(
 	persist(
 		set => ({
-			token: null,
-			user: null,
-			login: token => {
+			user : null,
+			token : null,
+			login : (token) => {
 				const decoded = jwtDecode(token);
 				set({
 					token,
-					user: {
-						username: decoded.username,
-						role: decoded.role,
-					},
-				});
+					user : {
+						username : decoded.username,
+						role : decoded.role
+					}
+				})
 			},
-			logout: () => {
+			logout : () => {
 				set({
-					token: null,
-					user: null,
+					token : null,
+					user : null
 				});
-			},
-		}),
-		{
-			name: "auth",
-		},
-	),
+			}
+		}), {
+			name : 'auth'
+		}
+	)
 );

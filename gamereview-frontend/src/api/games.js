@@ -2,29 +2,30 @@ const BASE_URL =
 	"https://29fw5ucga9.execute-api.eu-north-1.amazonaws.com/api/games";
 
 export const getGames = async (category, title) => {
-	// const params = new URLSearchParams();
+	const params = new URLSearchParams();
 
-	// if (category !== "All") {
-	// 	params.append("category", category.toLowerCase());
-	// }
+	if(category !== 'All') {
+		params.append('category', category.toLowerCase());
+	}
 
-	// if (title) {
-	// 	params.append("title", title.toLowerCase());
-	// }
+	if(title) {
+		params.append('title', title.toLowerCase());
+	}
 
-	// const queryString = params.toString();
+	const queryString = params.toString();
 
-	// const url = queryString ? `${BASE_URL}?${queryString}` : BASE_URL;
+	const url = queryString ?
+		`${BASE_URL}?${queryString}` :
+		BASE_URL;
 
-	// const response = await fetch(url);
+	const response = await fetch(url);
+	if(!response.ok) {
+		throw new Error('Could not fetch games');
+	}
 
-	// if (!response.ok) {
-	// 	throw new Error("Could not fetch games");
-	// }
+	const data = await response.json();
 
-	// const data = await response.json();
-
-	return [];
+	return data.games;
 };
 
 export const getGameById = async gameId => {

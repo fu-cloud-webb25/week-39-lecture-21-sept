@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { useAuthStore } from "../../stores/authstore";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { login as loginUser } from "../../api/auth";
 
 const demoUsers = [
 	{
@@ -20,8 +22,19 @@ const LoginForm = () => {
 	const passwordRef = useRef();
 	const saveToken = useAuthStore(state => state.login);
 	const navigate = useNavigate();
-	const isError = false;
-	const isPending = false;
+	
+	const {
+		mutate,
+		isPending,
+		isError, 
+		error
+	} = useMutation({
+		mutationFn : loginUser,
+		onSuccess : (data) => {
+			saveToken(data.token);
+			navigate('/');
+		}
+	});
 
 	const handleDemoUser = user => {
 		usernameRef.current.value = user.username;
@@ -30,6 +43,11 @@ const LoginForm = () => {
 
 	const handleSubmit = event => {
 		event.preventDefault();
+
+		mutate({
+			username : usernameRef.current.value,
+			password : passwordRef.current.value
+		});
 	};
 
 	return (

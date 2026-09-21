@@ -1,12 +1,23 @@
 import { useRef } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { register } from "../../api/auth";
+
 
 const RegisterForm = () => {
 	const usernameRef = useRef();
 	const passwordRef = useRef();
 	const roleRef = useRef();
-	const isError = false;
-	const isPending = false;
-	const isSuccess = false;
+	
+	const {
+		mutate,
+		isPending,
+		isError,
+		error,
+		isSuccess
+	} = useMutation({
+		mutationFn : register
+	});
+
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -16,6 +27,7 @@ const RegisterForm = () => {
 			password: passwordRef.current.value,
 			role: roleRef.current.value ? "user" : "admin",
 		};
+		mutate(user);
 	};
 
 	return (
